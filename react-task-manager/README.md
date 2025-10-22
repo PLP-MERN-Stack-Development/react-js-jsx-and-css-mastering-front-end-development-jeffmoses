@@ -2,6 +2,12 @@ React Task Manager
 
 A modern, responsive, single-page To-Do List application built with React and integrated with Google Firestore for real-time data persistence. TaskFlow allows users to manage their tasks effectively with a clean interface and robust dark mode support.
 
+🔗 Live Demo
+
+Access the deployed application here:
+
+https://plp-mern-stack-development.github.io/react-js-jsx-and-css-mastering-front-end-development-jeffmoses/
+
 🌟 Features
 
 Real-time Task Management (CRUD):
