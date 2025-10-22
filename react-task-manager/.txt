@@ -1,2 +1,0 @@
-debug index.css and app.css
-debug theme file in context.

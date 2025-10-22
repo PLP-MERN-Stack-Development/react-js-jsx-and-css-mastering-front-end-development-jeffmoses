@@ -1,70 +1,135 @@
-# React.js and Tailwind CSS Assignment
+React Task Manager
 
-This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
+A modern, responsive, single-page To-Do List application built with React and integrated with Google Firestore for real-time data persistence. TaskFlow allows users to manage their tasks effectively with a clean interface and robust dark mode support.
 
-## Assignment Overview
+🌟 Features
 
-You will:
-1. Set up a React project with Vite and Tailwind CSS
-2. Create reusable UI components
-3. Implement state management using React hooks
-4. Integrate with external APIs
-5. Style your application using Tailwind CSS
+Real-time Task Management (CRUD):
 
-## Getting Started
+Create: Add new tasks easily.
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Start the development server:
-   ```
-   npm run dev
-   ```
+Read: View pending and completed tasks separately in real time.
 
-## Files Included
+Update: Toggle tasks between incomplete and complete status.
 
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
+Delete: Remove tasks permanently.
 
-## Requirements
+Data Persistence: Tasks are stored securely and privately for each user using Firestore, ensuring data is available across sessions.
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
+Dark/Light Mode: A dynamic theme toggle allows the user to switch between a bright light mode and a comfortable dark mode, persisting the preference in local storage.
 
-## Project Structure
+Responsive Design: Built using Tailwind CSS for an adaptive layout that looks great on both mobile and desktop screens.
 
-```
-src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
-```
+Single-File Deployment: The entire application logic is contained within a single App.jsx file for easy deployment in constrained environments like Canvas.
 
-## Submission
+🛠️ Technology Stack
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Category
 
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
+Technology
 
-## Resources
+Purpose
 
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+Frontend
+
+React (with Hooks)
+
+Component-based UI development and state management.
+
+Styling
+
+Tailwind CSS
+
+Utility-first CSS framework for rapid and responsive styling.
+
+Database
+
+Google Firestore
+
+Real-time, NoSQL database for storing task data.
+
+Authentication
+
+Firebase Auth
+
+Manages user sessions (using Custom Tokens or Anonymous Sign-in).
+
+📁 Project Structure
+
+This project follows a component-driven architecture, organizing related files into dedicated folders even though the deployed output is a single bundled file.
+
+react-task-manager/
+├── src/
+│   ├── components/      # Reusable UI elements (e.g., Navbar, TaskItem)
+│   ├── context/         # Global state providers (ThemeContext, TaskContext)
+│   ├── pages/           # View-level components (TasksPage, AboutPage)
+│   ├── App.jsx          # The primary, self-contained application component
+│   └── main.jsx         # The root entry point that renders the App component
+├── .gitignore
+├── index.html           # HTML entry point
+├── package.json         # Project dependencies and scripts
+└── vite.config.js       # Configuration for the Vite build tool
+
+
+
+
+🚀 Getting Started (Local Installation)
+
+Follow these steps to set up and run the React Task Manager on your local machine using standard development tools.
+
+Prerequisites
+
+Ensure you have Node.js and a package manager (npm or Yarn) installed.
+
+Installation Steps
+
+Clone the repository:
+Open your terminal and clone the project from GitHub.
+
+git clone https://github.com/PLP-MERN-Stack-Development/react-js-jsx-and-css-mastering-front-end-development-jeffmoses.git
+
+
+Navigate to the project directory:
+
+cd react-task-manager
+
+
+Install dependencies:
+This command installs all necessary libraries (React, Firebase, etc.).
+
+npm install
+# or
+yarn install
+
+
+Run the development server:
+The application will start the development server, typically opening at http://localhost:5173.
+
+npm run dev
+
+
+Note: If running locally, you must provide your own Firebase configuration and API keys, as the application relies on global variables for the Canvas environment (detailed below).
+
+☁️ Deployment & Setup Notes (Canvas Environment)
+
+This section details the unique environment variables required for deployment within the Canvas single-file environment.
+
+Data Storage Path
+
+All user data (tasks) is stored securely within Firestore under the following path structure, ensuring privacy for each unique user ID (userId):
+
+/artifacts/{__app_id}/users/{userId}/tasks/{taskId}
+
+
+
+Required Global Variables
+
+The application relies on the following global variables being available in the runtime environment:
+
+__firebase_config: The JSON configuration object required to initialize the Firebase application.
+
+__app_id: A unique identifier for the current application instance, used in the Firestore data path.
+
+__initial_auth_token: An optional Firebase Custom Auth Token used to sign in the user for persistent data access. If not provided, the app falls back to anonymous sign-in.
+
+
